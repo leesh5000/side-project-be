@@ -1,17 +1,11 @@
 spring:
-  datasource:
-    url:
-    username:
-    password:
+  profiles:
+    active: dev
 
-  jpa:
-    hibernate:
-      ddl_auto: create
-    properties:
-      hibernate:
-        format_sql: true
-        show_sql: true
+---
 
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
+spring:
+  profiles:
+    group:
+      dev: dev, secret
+      prod:
